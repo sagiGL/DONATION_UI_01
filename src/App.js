@@ -13,13 +13,12 @@ function App() {
   const addDontaion = () => {
     setdonations(donations + myDonation);
     let newObj = {date: new Date(), donated: myDonation};
-    const newData = [newObj].concat(data);
+    const newData = [...data].push(newObj); 
     setdata(newData);
   }
   const checkInput = (val) => {
     setMyDonation(isNaN(val)? 0: val);
   }
-
   return (
   <div className="donate-comp">
     <div className="comment">
